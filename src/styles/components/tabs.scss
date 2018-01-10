@@ -1,0 +1,26 @@
+.tabs {
+  color: black;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+
+.tab {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  font-weight: 500;
+  background-color: #f0efe9;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.active-tab {
+  background: white;
+  color: $blue;
+}

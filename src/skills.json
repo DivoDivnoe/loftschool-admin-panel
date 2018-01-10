@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "HTML5",
+    "perc": "90",
+    "type": 1
+  },
+  {
+    "id": 2,
+    "name": "CSS3",
+    "perc": "90",
+    "type": 1
+  },
+  {
+    "id": 3,
+    "name": "Javascript & jQuery",
+    "perc": "70",
+    "type": 1
+  },
+  {
+    "id": 4,
+    "name": "PHP",
+    "perc": "20",
+    "type": 2
+  },
+  {
+    "id": 5,
+    "name": "mySQL",
+    "perc": "25",
+    "type": 2
+  },
+  {
+    "id": 6,
+    "name": "Node.js & npm",
+    "perc": "5",
+    "type": 2
+  },
+  {
+    "id": 7,
+    "name": "Mongo.db",
+    "perc": "0",
+    "type": 2
+  },
+  {
+    "id": 8,
+    "name": "Git",
+    "perc": "50",
+    "type": 3
+  },
+  {
+    "id": 9,
+    "name": "Gulp",
+    "perc": "50",
+    "type": 3
+  },
+  {
+    "id": 10,
+    "name": "Bower",
+    "perc": "0",
+    "type": 3
+  }
+]
