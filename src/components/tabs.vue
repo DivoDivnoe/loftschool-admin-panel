@@ -11,15 +11,15 @@ export default {
     return {
       tabs: [
         {
-          name: 'Таб 1',
+          name: 'Tab 1',
           href: '/'
         },
         {
-          name: 'Таб 2',
+          name: 'Tab 2',
           href: '/blog'
         },
         {
-          name: 'Таб 3',
+          name: 'Tab 3',
           href: '/works'
         }
       ]

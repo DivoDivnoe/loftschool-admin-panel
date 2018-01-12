@@ -4,23 +4,51 @@
 
 .item {
   &:not(:last-child) {
-    margin-bottom: 2px;
+    border-bottom: 2px solid white;
   }
 }
 
 .tab {
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 12px 12px 9px 12px;
   font-weight: 500;
   background-color: #f0efe9;
   border: none;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    text-shadow: 1px 1px 0 rgba(black, 0.2);
+  }
 }
 
 .active-tab {
   background: white;
   color: $blue;
+}
+
+@media screen and (min-width: $tablet) {
+  .list {
+    display: flex;
+  }
+
+  .item {
+    flex: 1;
+
+    &:not(:last-child) {
+      border-bottom: none;
+      border-right: 2px solid white;
+    }
+  }
+
+  .tab {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
 }

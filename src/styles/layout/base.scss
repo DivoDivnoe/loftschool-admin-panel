@@ -12,7 +12,6 @@ html::after {
 
 html,
 body {
-  min-width: 320px;
   height: 100%;
 }
 
@@ -51,26 +50,133 @@ ol {
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
   background: url('~img/night-bg-desktop@1x.jpg') no-repeat center center;
   background-size: cover;
 }
 
+.page-wrapper {
+  width: 300px;
+  margin: 0 auto;
+}
+
 .content {
-  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
   background-color: rgba(#ffffff, 0.85);
 }
 
-/*@media screen and (min-width: $tablet) {
-  body {
-    font-size: 16px;
-    line-height: calc(24 / 16);
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  &--active {
+    display: flex;
   }
 }
 
-@media screen and (min-width: $desktop) {
+.button {
+  padding: 12px 20px;
+  font-weight: 500;
+  color: white;
+  background-color: #0548be;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &--form {
+    margin-top: 11px;
+  }
+
+  &--popup {
+    padding: 11px 21px;
+  }
+
+  &:hover {
+    background-color: #083c96;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 5px 0 rgba(black, 0.5);
+  }
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.message {
+  margin: 0 0 13px 0;
+}
+
+.error {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 180px;
+  height: auto;
+  padding: 13px 20px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  background-color: #e44845;
+  border-radius: 7px;
+  visibility: hidden;
+  z-index: 100;
+
+  &--active {
+    visibility: visible;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border: 8px solid transparent;
+    border-bottom: 8px solid #e44845;
+    transform: translate(-50%, -100%);
+  }
+}
+
+@media screen and (min-width: 768px) {
   body {
     font-size: 16px;
     line-height: calc(24 / 16);
   }
-}*/
+
+  .page-wrapper {
+    width: 708px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 16px;
+    line-height: calc(24 / 16);
+  }
+
+  .page-wrapper {
+    width: 1140px;
+  }
+
+  #app {
+    height: 100vh;
+    min-height: 700px;
+  }
+}

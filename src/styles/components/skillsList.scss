@@ -1,4 +1,37 @@
+.list {
+  padding-bottom: 10px;
+}
+
+.table {
+  border-spacing: 0 8px;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: calc(34 / 14);
+  text-transform: capitalize;
+}
+
+.input {
+  border: none;
+}
+
 .error {
   border: 1px solid firebrick;
   outline: none;
+}
+
+@media screen and (min-width: $tablet) {
+  .title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .list:not(:last-child) {
+    margin-right: 100px;
+  }
 }

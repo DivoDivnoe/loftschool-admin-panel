@@ -14,12 +14,11 @@
   export default {
     components: {
       adminHeader: header,
-      tabs,
-      about
+      tabs
     }
   };
 </script>
 
-<style lang="scss" src="styles/../layout/base.scss" scoped>
+<style lang="scss" scoped>
 
 </style>

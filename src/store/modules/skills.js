@@ -22,16 +22,15 @@ const skills = {
         .then(json => (state.data = json))
         .catch(error => alert(error));
     },
-    uploadSkills({state}) {
-      console.log(state);
+    uploadSkills({state}, url) {
       const settings = {
-        body: JSON.stringify(state),
+        body: JSON.stringify(state.data),
         headers: {
           'Content-type': 'application/json'
         },
         method: 'POST'
       };
-      return fetch('#', settings).catch(error => console.error(error));
+      return fetch(url, settings).catch(error => console.error(error));
     }
   }
 };

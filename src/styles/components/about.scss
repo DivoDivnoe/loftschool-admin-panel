@@ -1,23 +1,41 @@
 .title {
-  text-transform: capitalize;
+  margin: 0;
+  padding: 20px 0 10px 0;
 }
 
-.wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
+.form {
+  padding-bottom: 10px;
+}
 
-  &--active {
-    display: flex;
+@media screen and (min-width: $tablet) {
+  .title {
+    padding-top: 43px;
+    padding-bottom: 32px;
+    font-size: 21px;
+  }
+
+  .form {
+    padding-bottom: 85px;
+  }
+
+  .button {
+    &--form {
+      padding: 14px 20px;
+    }
   }
 }
 
-.popup {
-  background-color: white;
+@media screen and (min-width: $desktop) {
+  .about {
+    height: 100%;
+  }
+
+  .form-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form {
+    padding-bottom: 0;
+  }
 }

@@ -1,0 +1,80 @@
+.title {
+  margin: 0;
+  padding-top: 21px;
+}
+
+.form {
+  padding-bottom: 30px;
+}
+
+.form-title {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 13px;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+.label {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.message {
+  width: 100%;
+  height: 250px;
+  padding: 15px 18px;
+  margin: 0;
+  resize: none;
+  border: none;
+}
+
+@media screen and (min-width: $tablet) {
+  .title {
+    padding-top: 42px;
+    padding-bottom: 26px;
+    font-size: 21px;
+    line-height: calc(34 / 21);
+  }
+
+  .form-title {
+    font-size: 16px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input {
+    width: 300px;
+    padding-top: 14px;
+    padding-bottom: 13px;
+  }
+
+  .message {
+    width: 500px;
+    height: 300px;
+  }
+
+  .label[for='message'] {
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .message {
+    height: 166px;
+  }
+
+  .label[for='message'] {
+    margin-bottom: 23px;
+  }
+}

@@ -9,13 +9,12 @@ const routes = [
     component: require('./components/about.vue').default
   },
   {
-    path: '/works/:paramId',
-    component: require('./components/works.vue').default,
-    props: true
-  },
-  {
     path: '/blog',
     component: require('./components/blog.vue').default
+  },
+  {
+    path: '/works',
+    component: require('./components/works.vue').default
   }
 ];
 

@@ -13,7 +13,7 @@
   },
   {
     "id": 3,
-    "name": "Javascript & jQuery",
+    "name": "Javascript",
     "perc": "70",
     "type": 1
   },
@@ -31,7 +31,7 @@
   },
   {
     "id": 6,
-    "name": "Node.js & npm",
+    "name": "Node.js",
     "perc": "5",
     "type": 2
   },
