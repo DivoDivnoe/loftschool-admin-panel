@@ -6,33 +6,33 @@
         h3.form-title Добавить запись
         label.label(for="title")
           input.input(
-            :class="{'input--error': validation.hasError('article.name')}",
+            :class="{'input--error': validation.hasError('name')}",
             type="text",
             id="title",
             placeholder="Название",
-            v-model="article.name"
+            v-model="name"
           )
           span.visually-hidden Название
-          div.error(:class="{'error--active': validation.hasError('article.name')}") {{validation.firstError("article.name")}}
+          div.error(:class="{'error--active': validation.hasError('name')}") {{validation.firstError("name")}}
         label.label(for="date")
           input.input(
-            :class="{'input--error': validation.hasError('article.date')}",
+            :class="{'input--error': validation.hasError('date')}",
             type="text", id="date",
             placeholder="Дата",
-            v-model="article.date"
+            v-model="date"
           )
           span.visually-hidden Дата
-          div.error(:class="{'error--active': validation.hasError('article.date')}") {{validation.firstError("article.date")}}
+          div.error(:class="{'error--active': validation.hasError('date')}") {{validation.firstError("date")}}
         label.label(for="message")
           textarea.message(
-            :class="{'input--error': validation.hasError('article.text')}",
+            :class="{'input--error': validation.hasError('text')}",
             type="text",
             id="message",
             placeholder="Содержание",
-            v-model="article.text"
+            v-model="text"
           )
           span.visually-hidden Дата
-          div.error(:class="{'error--active': validation.hasError('article.text')}") {{validation.firstError("article.text")}}
+          div.error(:class="{'error--active': validation.hasError('text')}") {{validation.firstError("text")}}
         button.button(type="submit") Добавить
     .wrapper(:class="{'wrapper--active': submitted}")
       .popup
@@ -41,34 +41,31 @@
 </template>
 
 <script>
-  import {mapActions, mapGetters, mapMutations} from 'vuex';
   import {Validator} from 'simple-vue-validator';
 
   export default {
     mixins: [require('simple-vue-validator').mixin],
     validators: {
-      'article.name'(value) {
+      'name'(value) {
         return Validator.value(value).required('Поле должно быть заполнено');
       },
-      'article.date'(value) {
+      'date'(value) {
         return Validator.value(value).required('Поле должно быть заполнено');
       },
-      'article.text'(value) {
+      'text'(value) {
         return Validator.value(value).required('Поле должно быть заполнено');
       }
     },
     data() {
       return {
         url: '#',
-        submitted: false
+        submitted: false,
+        name: '',
+        date: '',
+        text: ''
       }
     },
-    computed: {
-      ...mapGetters(['article'])
-    },
     methods: {
-      ...mapActions(['uploadData']),
-      ...mapMutations(['addNewArticle']),
       closePopup() {
         this.submitted = false;
       },
@@ -76,9 +73,23 @@
         this.$validate().then(success => {
           if (!success) return false;
 
-          this.addNewArticle(this.article);
-          this.uploadData(this.url);
+
+          this.uploadData();
         });
+      },
+      uploadData() {
+        const settings = {
+          body: JSON.stringify({
+            name: this.name,
+            data: this.date,
+            text: this.text
+          }),
+          headers: {
+            'Content-type': 'application/json'
+          },
+          method: 'POST'
+        };
+        return fetch(this.url, settings).catch(error => console.error(error));
       }
     }
   };
