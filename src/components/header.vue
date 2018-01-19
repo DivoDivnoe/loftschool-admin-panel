@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header
     .header-wrapper
-      a(href="#").return Вернуться на сайт
+      a(href="/").return Вернуться на сайт
       h1.title Панель администрирования
 </template>
 
