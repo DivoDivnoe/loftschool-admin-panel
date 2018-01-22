@@ -28,7 +28,7 @@
   export default {
     data() {
       return {
-        url: '#',
+        url: '/api/skills',
         skillsTypes: ['frontend', 'backend', 'workflow'],
         submitted: false,
         validate: false,

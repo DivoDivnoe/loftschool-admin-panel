@@ -57,7 +57,7 @@
     },
     data() {
       return {
-        url: '#',
+        url: '/api/works',
         submitted: false,
         name: '',
         tehnologies: '',

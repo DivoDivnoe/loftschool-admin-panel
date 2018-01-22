@@ -58,7 +58,7 @@
     },
     data() {
       return {
-        url: '#',
+        url: '/api/blog',
         submitted: false,
         name: '',
         date: '',
